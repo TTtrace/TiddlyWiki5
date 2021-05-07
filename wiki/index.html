@@ -189,6 +189,8 @@ Error message and password prompt
 
 <li>$:/themes/tiddlywiki/vanilla</li>
 
+<li>声明语句</li>
+
 <li>引用(reference)</li>
 
 <li>作用域 (scope)</li>
@@ -10495,8 +10497,8 @@ To use in other wikis, drag and drop this link to those wikis: [[Kookma Plugin L
 <div created="20210507035900433" modified="20210507035900433" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
-<div created="20210507040216529" modified="20210507042744410" title="$:/state/sidebar">
-<pre>no</pre>
+<div created="20210507040216529" modified="20210507082556016" title="$:/state/sidebar">
+<pre>yes</pre>
 </div>
 <div created="20210507041848672" modified="20210507041849519" title="$:/state/tab--1418380610">
 <pre>$:/core/ui/ControlPanel/Plugins/Add/Plugins</pre>
@@ -10516,13 +10518,13 @@ To use in other wikis, drag and drop this link to those wikis: [[Kookma Plugin L
 <div created="20210507035146014" modified="20210507035344982" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/General</pre>
 </div>
-<div created="20210507035050866" modified="20210507035050866" title="$:/state/tab/sidebar--595412856">
-<pre>$:/core/ui/SideBar/Tools</pre>
+<div created="20210507035050866" modified="20210507081758481" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/Recent</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210507042259194" list="引用(reference) [[作用域 (scope)]] GettingStarted $:/ControlPanel" modified="20210507042347229" title="$:/StoryList">
+<div created="20210507090309468" list="声明语句 引用(reference) 引用 GettingStarted" modified="20210507090324899" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.23">
@@ -10634,6 +10636,20 @@ To use in other wikis, drag and drop this link to those wikis: [[Kookma Plugin L
     }
 }</pre>
 </div>
+<div created="20210507082600754" modified="20210507091006692" tags="C++" title="声明语句">
+<pre>基本数据类型 (base type) + 声明符 (declarator)列表
+
+大部分情况下，声明符就是变量名。
+
+但定义[[引用(reference)]]和指针(pointer)时，声明符还包括//类型修饰符 (`&amp;`和`*`)//。
+
+一条定义语句可能定义出不同类型的变量：
+
+```
+int i = 1024, *p = gi, &amp;r = i;
+```
+</pre>
+</div>
 <div created="20210507034837460" modified="20210507043532075" tags="C++" title="引用(reference)">
 <pre>&lt;&lt;&lt;
 引用(reference)为对象起了另外一个名字&lt;&lt;fnote &quot;引用并非对象，相反的，它只是为一个已经存在的对象所起的另外一个名字。&quot; &gt;&gt;
@@ -10649,8 +10665,7 @@ To use in other wikis, drag and drop this link to those wikis: [[Kookma Plugin L
 </pre>
 </div>
 <div created="20210507074216066" modified="20210507075236313" tags="C++" title="作用域 (scope)">
-<pre>
-&lt;&lt;&lt;
+<pre>&lt;&lt;&lt;
 The portion of a program in which ''names'' have meaning. 
 
 ——《C++ Primer》5th
