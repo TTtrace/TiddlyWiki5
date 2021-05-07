@@ -197,6 +197,8 @@ Error message and password prompt
 
 <li>作用域 (scope)</li>
 
+<li>Tmux终端复用器</li>
+
 </ul>
 </p>
 
@@ -10095,7 +10097,9 @@ To use in other wikis, drag and drop this link to those wikis: [[Kookma Plugin L
 <div status="complete" title="$:/Import">
 <pre>The following tiddlers were imported:
 
-# [[声明语句]]</pre>
+# [[引用(reference)]]
+# [[作用域 (scope)]]
+# [[Tmux终端复用器]]</pre>
 </div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
@@ -10526,7 +10530,7 @@ To use in other wikis, drag and drop this link to those wikis: [[Kookma Plugin L
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div list="$:/Import GettingStarted" title="$:/StoryList">
+<div created="20210507114848800" list="$:/Import 声明语句 GettingStarted" modified="20210507114848800" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210507091059063" modified="20210507091101198" title="$:/theme">
@@ -10655,7 +10659,7 @@ int i = 1024, *p = gi, &amp;r = i;
 ```
 </pre>
 </div>
-<div created="20210507034837460" modified="20210507043532075" tags="C++" title="引用(reference)">
+<div bag="default" created="20210507034837460" modified="20210507105122561" revision="0" tags="C++" title="引用(reference)" type="text/vnd.tiddlywiki">
 <pre>&lt;&lt;&lt;
 引用(reference)为对象起了另外一个名字&lt;&lt;fnote &quot;引用并非对象，相反的，它只是为一个已经存在的对象所起的另外一个名字。&quot; &gt;&gt;
 &lt;&lt;&lt;
@@ -10669,7 +10673,7 @@ int i = 1024, *p = gi, &amp;r = i;
 
 </pre>
 </div>
-<div created="20210507074216066" modified="20210507075236313" tags="C++" title="作用域 (scope)">
+<div bag="default" created="20210507074216066" modified="20210507105122568" revision="0" tags="C++" title="作用域 (scope)" type="text/vnd.tiddlywiki">
 <pre>&lt;&lt;&lt;
 The portion of a program in which ''names'' have meaning. 
 
@@ -10688,6 +10692,69 @@ C++ has several levels of scope:
 # ​''class''—names deﬁned inside a class
 # ''namespace''—names deﬁned inside a namespace
 # ''block''—names deﬁned inside a block
+
+</pre>
+</div>
+<div bag="default" created="20210507111312141" modified="20210507113138424" revision="2" tags="[[command line]] terminal" title="Tmux终端复用器" type="text/vnd.tiddlywiki">
+<pre>! 会话与进程
+
+命令行的典型使用方式是，打开一个终端窗口，在里面输入命令。用户与计算机的这种临时的交互，称为一次''&quot;会话&quot;（session）'' 。
+
+会话的一个重要特点是，窗口与其中启动的进程是连在一起的。打开窗口，会话开始；关闭窗口，会话结束，进程中止。
+
+Tmux等终端复用器&lt;&lt;fnote &quot;类似的还有GNU Screen&quot;&gt;&gt;实现了''会话与窗口&quot;解绑&quot;''。
+
+
+! 会话管理
+
+!! 新建会话
+
+第一个启动的 Tmux 窗口，编号是0，第二个窗口的编号是1。可以为会话起名
+
+```bash
+tmux new -s &lt;session-name&gt;
+```
+
+!! 分离会话
+
+在 Tmux 窗口中，按下`Ctrl+b d`或者输入`tmux detach`命令
+
+!! 列出会话
+
+```bash
+tmux ls
+```
+
+!! 接入会话
+
+```bash
+# 使用会话编号
+$ tmux attach -t 0
+
+# 使用会话名称
+$ tmux attach -t &lt;session-name&gt;
+```
+
+!! 杀死会话
+
+```bash
+tmux kill-session -t 0
+tmux kill-session -t &lt;session-name&gt;
+```
+
+!! 切换会话
+
+```bash
+tmux switch -t 0
+tmux switch -t &lt;session-name&gt;
+```
+
+!! 重命名会话
+
+```bash
+tmux rename-session -t 0 &lt;new-name&gt;
+```
+
 
 </pre>
 </div>
